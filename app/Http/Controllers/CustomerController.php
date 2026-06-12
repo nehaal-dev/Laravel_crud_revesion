@@ -12,7 +12,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customer_data=Customer::all();
+
+        return view('index' , compact('customer_data')) ;
     }
 
     /**
