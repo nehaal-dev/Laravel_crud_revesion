@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    {{-- php artisan storage:link --}}
     <h1>CUSTOMER TABLE </h1>
 
     <table class="table">
