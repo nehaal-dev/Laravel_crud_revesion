@@ -14,7 +14,7 @@ class CustomerController extends Controller
     {
         $customer_data=Customer::all();
 
-        return view('index' , compact('customer_data')) ;
+        return view('customers.index' , compact('customer_data')) ;
     }
 
     /**
@@ -22,7 +22,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('customers.create');
     }
 
     /**
