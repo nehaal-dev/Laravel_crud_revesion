@@ -6,8 +6,11 @@
 ## Project Setup
 
 bash
+
 composer create-project laravel/laravel revision
+
 cd revision
+
 php artisan serve
 
 php artisan storage:link  # symlink for file uploads
