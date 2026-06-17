@@ -20,27 +20,29 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="header">
-                    <h1>Create Customer </h1>
+                    <h1>Edit Customer Data</h1>
                 </div>
                 <div class="body">
-                    <form method="POST" action="{{route('customers.update' , $customer->id)}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('customers.update', $customer->id) }}"
+                        enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <div class="form-group">
                             <label>Customer Name </label>
-                            <input class="form-control" type="text" name="name" value="{{ $customer->name }}"  placeholder="Enter Name">
+                            <input class="form-control" type="text" name="name" value="{{ $customer->name }}"
+                                placeholder="Enter Name">
                         </div>
                         <div class="form-group">
                             <label>Gender </label>
                             <div class="form-check">
                                 <input id="male" class="form-check-input" type="radio" name="gender"
-                                    value="Male" {{ $customer->gender == 'Male' ? 'checked'  : ''}}  >
+                                    value="Male" {{ $customer->gender == 'Male' ? 'checked' : '' }}>
                                 <label for="male" class="form-check-label">Male</label>
                             </div>
 
                             <div class="form-check">
                                 <input id="female" class="form-check-input" type="radio" name="gender"
-                                    value="Female" {{ $customer->gender == 'Female' ? 'checked' : ''}}  >
+                                    value="Female" {{ $customer->gender == 'Female' ? 'checked' : '' }}>
                                 <label for="female" class="form-check-label">Female</label>
                             </div>
 
@@ -49,12 +51,12 @@
                             <label for="">Payment</label>
                             <div class="form-check">
                                 <input id="Cash" class="form-check-input" type="checkbox" name="payment[]"
-                                    value="Cash" {{ in_array('Cash',$customer->payment) ? 'checked' : '' }}>
+                                    value="Cash" {{ in_array('Cash', $customer->payment) ? 'checked' : '' }}>
                                 <label for="Cash" class="form-check-label">Cash</label>
                             </div>
                             <div class="form-check">
                                 <input id="Online" class="form-check-input" type="checkbox" name="payment[]"
-                                    value="Online" {{ in_array('Online' , $customer->payment) ? 'checked' : ''}}>
+                                    value="Online" {{ in_array('Online', $customer->payment) ? 'checked' : '' }}>
                                 <label for="Online" class="form-check-label">Online</label>
                             </div>
                         </div>
@@ -62,21 +64,25 @@
                             <label for="Country">Country</label>
                             <select id="" class="form-control" name="country">
                                 <option>Select Country </option>
-                                <option value="India" {{ $customer->country == 'India' ? 'selected' : '' }}>India</option>
-                                <option value="Nepal" {{ $customer->country == 'Nepal' ? 'selected' : '' }}>Nepal</option>
-                                <option value="China" {{ $customer->country == 'China' ? 'selected' : '' }}>China</option>
+                                <option value="India" {{ $customer->country == 'India' ? 'selected' : '' }}>India
+                                </option>
+                                <option value="Nepal" {{ $customer->country == 'Nepal' ? 'selected' : '' }}>Nepal
+                                </option>
+                                <option value="China" {{ $customer->country == 'China' ? 'selected' : '' }}>China
+                                </option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="Profile">Profile</label>
+                            <input class="form-control-file" type="file" name="image">
+                            <img src="{{ asset('storage/' . $customer->profile) }}" width=50 height=50>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Update </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="Profile">Profile</label>
-                    <input class="form-control-file" type="file" name="image">
-                    <img src="{{ asset('storage/' .$customer->profile ) }}" width=50 height=50 >
-                </div>
-                <div class="form-group">
-                    <button type="submit">Save </button>
-                </div>
-                </form>
+
             </div>
         </div>
     </div>

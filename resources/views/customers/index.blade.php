@@ -15,7 +15,11 @@
 
 <body>
     {{-- php artisan storage:link --}}
-    <h1>CUSTOMER TABLE </h1>
+   
+    <h1>CUSTOMER TABLE </h1> 
+    <a href="{{ route('customers.create') }}"><button class="btn btn-lg bg-danger ">Create customer </button> </a>                           
+ 
+
 
     <table class="table">
         <tr>

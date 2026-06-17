@@ -11,4 +11,9 @@ Route::post('/customer', [CustomerController::class, 'store'])->name('customers.
 Route::get('/customer/{customer}', [CustomerController::class, 'show'])->name('customers.show');
 Route::get('/customer/{customer}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
 Route::put('/customer/{customer}', [CustomerController::class, 'update'])->name('customers.update');
+
+//Route model binding method
 Route::delete('/customer/{customer}', [CustomerController::class , 'destroy'])->name('customers.destroy');
+
+//manual method and passing id for delete ,
+//Route::delete('/customer/{id}' , [CustomerController::class, 'destroy'])->name('customers.destroy');
