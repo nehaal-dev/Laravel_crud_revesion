@@ -162,6 +162,7 @@ public function store(Request $request)
 }
 
 // EDIT — form with existing data
+
 public function edit(Customer $customer)
 {
     return view('customers.edit', compact('customer'));
@@ -169,6 +170,15 @@ public function edit(Customer $customer)
 }
 
 // UPDATE — data update karo
+1. validate
+2. basic data array
+3. if image uploaded:
+      - old image delete
+      - new image upload
+      - image path ko $data me add karo
+4. customer update
+5. redirect
+
 public function update(Request $request, Customer $customer)
 {
     $request->validate([
